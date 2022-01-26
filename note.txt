@@ -1,0 +1,3 @@
+Implement:
+- spring cloud config update env variables in runtime
+- github hash in jar file
