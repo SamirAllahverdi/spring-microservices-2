@@ -23,12 +23,9 @@ public class CurrencyConversionController {
                                                           @PathVariable String to,
                                                           @PathVariable BigDecimal quantity) {
         CurrencyConversion currencyConversion = currencyExchangeProxy.getExchangeValue(from, to);
-
-        return CurrencyConversion.builder()
-                .id(currencyConversion.getId())
-                .from(from).to(to)
-                .quantity(quantity)
-                .conversionMultiple(quantity.multiply(currencyConversion.getConversionMultiple()))
-                .build();
+        currencyConversion.setQuantity(quantity);
+        currencyConversion.setTotalCalculatedAmount(
+                quantity.multiply(currencyConversion.getConversionMultiple()));
+        return currencyConversion;
     }
 }
