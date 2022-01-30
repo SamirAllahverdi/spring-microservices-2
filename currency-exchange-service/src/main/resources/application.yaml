@@ -25,3 +25,24 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
 
+resilience4j:
+  retry:
+    instances:
+      sample-api-retry:
+        maxRetryAttempts: 6
+        waitDuration: 1s
+        enableExponentialBackoff: true
+  circuitbreaker:
+    instances:
+      default:
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 20
+  ratelimiter:
+    instances:
+      default:
+        limitForPeriod: 2
+        limitRefreshPeriod: 10s
+  bulkhead:
+    instances:
+      default:
+        maxConcurrentCalls: 3
