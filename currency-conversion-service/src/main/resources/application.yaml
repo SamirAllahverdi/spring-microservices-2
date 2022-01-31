@@ -12,6 +12,10 @@ spring:
   h2:
     console:
       enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 trace every request with percentage
+
 
 eureka:
   instance:

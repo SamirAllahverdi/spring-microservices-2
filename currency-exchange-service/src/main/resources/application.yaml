@@ -1,5 +1,5 @@
-server:
-  port: 8000
+server.port: 8000
+
 spring:
   application:
     name: currency-exchange
@@ -17,6 +17,10 @@ spring:
   h2:
     console:
       enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 trace every request with percentage
+
 
 eureka:
   instance:

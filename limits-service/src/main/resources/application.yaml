@@ -6,8 +6,12 @@ spring:
   cloud:
     config:
       profile: default
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 trace every request with percentage
 
 limits-service:
   maximum: 100
   minimum: 1
+
 

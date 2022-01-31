@@ -3,6 +3,10 @@ server.port: 8765
 spring:
   application:
     name: api-gateway
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 trace every request with percentage
+
 
 eureka:
   instance:
