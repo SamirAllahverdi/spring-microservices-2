@@ -30,6 +30,11 @@ dependencyManagement {
     }
 }
 
+bootBuildImage {
+    imageName = "microservices/${project.name}:${project.version}"
+    pullPolicy = "IF_NOT_PRESENT"
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }

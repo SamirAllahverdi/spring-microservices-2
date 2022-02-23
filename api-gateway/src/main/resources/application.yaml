@@ -15,6 +15,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
 
+
 # it can discover other services from eureka
-spring.cloud.gateway.discovery.locator.enabled: true
-spring.cloud.gateway.discovery.locator.lower-case-service-id: true
+pring.cloud.gateway.discovery.locator.enabled: true
+pring.cloud.gateway.discovery.locator.lower-case-service-id: true
