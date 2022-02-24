@@ -20,6 +20,7 @@ public class ApiGatewayConfiguration {
                         .uri("http://httpbin.org:80"))
                 .route(p -> p.path("/currency-exchange/**").uri("lb://currency-exchange")) // lb = load balancer
                 .route(p -> p.path("/currency-conversion/**").uri("lb://currency-conversion"))
+                .route(p -> p.path("/limits").uri("lb://limits-service"))
                 .build();
     }
 
